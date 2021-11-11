@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript1回目</title>
+    <link rel="shortcut icon" href="../../_common/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+    <link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>JavaScriptをまずは触る！</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+
+                <!-------------------------------------->
+                <h4>＜第一回目＞</h4>　
+                <h4>【やる事】</h4>
+                <h4>①JavaScriptの超基本</h4>
+                <h5>
+                    ここに分かったをメモっていこう
+                    javascriptを動かすにはjsファイルを読み込む
+                </h5>
+                <h4>②メソッドについて</h4>
+                <h5>
+                    ここに分かったをメモっていこう
+
+                    呼び出される側の文法
+                    function メソッド名(引数)｛
+                    ｝
+
+                    onclickというのはクリックされたらという意味
+
+                    イベントリスナー　＝　呼び出すメソッド名
+                </h5>
+                <h4>③DOMをつかむ</h4>
+                <h5>
+                    ここに分かったをメモっていこう
+
+                    document.getElementByIdで操作したいDOMをつかむ
+                </h5>
+                <!-------------------------------------->
+                <hr>
+
+
+                <!-------------授業ではこの部分を触れるよ。------------>
+                <h4>＜ここを触る＞</h4>
+                <button onclick='lesson01()' id="push">あなたの本音、引き出します。</button>
+
+                <p id="mojimoji">モジモジ・・・</p>
+                <button onclick='lesson02()' id="push">あなたのモジモジ、なおします。</button>
+                <!--
+                    <img id="img1" src="./img/cat.jpg">
+                -->
+                
+                <hr>
+                <!----------------------------------------------->
+
+
+                <!-----------  ここから練習問題ブロック------------>
+                <h5>練習問題</h5>
+                <button onclick='practice01()' id="push">練習問題です。</button>
+                <img id="pra1" src="./img/cat.jpg">
+                <!----------------------------------------------->
+                <p id="pra2">練習問題2</p>
+                <button onclick='practice02()' id="push">練習問題2を解く</button>
+            </section>
+        </div><!-- /.container -->
+    </main>
+    <script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="practice.js"></script>
+</body>
+
+</html>

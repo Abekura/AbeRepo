@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript2回目</title>
+    <link rel="shortcut icon" href="../../_common/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+    <link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>JavaScriptをまずは触る！</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+
+                <!-------------------------------------->
+                <h4>＜第2回目＞</h4>　
+                <h4>【やる事】</h4>
+                <h4>①DOMをつかむ</h4>
+                <h5>
+                    ここに分かったをメモっていこう
+                    document.getElementById()で要素をつかむ。
+
+                    その後ろにはピリオド「.」で何を操作したいのかを書く。
+
+                    画像サイズを変えるscript
+                    document.getElementById('image1').style.width = "50%";
+                </h5>
+                <!-------------------------------------->
+                <hr>
+
+
+                <!-------------授業ではこの部分を触れるよ。------------>
+                <p id="mojimoji">モジモジ・・・</p>
+                <button onclick='lesson02()' id="push">あなたのモジモジ、なおします。</button>
+                
+                <hr>
+                <!----------------------------------------------->
+
+
+                <!-----------  ここから練習問題ブロック------------>
+                <h5>復習問題</h5>
+                <p id="hukusyu">復習だお</p>
+                <button onclick='hukusyu01()'>復習問題問題です。</button>
+
+				<hr>
+				
+                <h5>練習問題①</h5>
+                <p id="pra1">うおおおおおお</p>
+                <button onclick='practice01()'>練習問題①</button>
+                <hr>
+                
+                <button onclick='practice02()'>練習問題②</button>
+                <img id="pra2" src="./img/cat.jpg" >
+
+                <br>
+                <hr>
+                <h5>練習問題③</h5>
+                <p id="pra3" style="color:red;">青い文字になりたいです。</p>
+                <button onclick='practice03()'>練習問題③</button>
+
+                <br>
+                <hr>
+                <button onclick="ouyou01()">猫が最強</button>
+                <button onclick="ouyou02()">犬が最強</button><br>
+                <img id="OY1" class="NiceGuy" src="./img/cr7.jpg"><br>
+                <img id="OY2" class="NiceGuy" src="./img/cr7.jpg"><br>
+                <img id="OY3" class="NiceGuy" src="./img/cr7.jpg"><br>
+                <img id="OY4" class="NiceGuy" src="./img/cr7.jpg"><br>
+
+
+                <!----------------------------------------------->
+            </section>
+        </div><!-- /.container -->
+    </main>
+    <script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="practice.js"></script>
+    <script src="hukusyu.js"></script>
+</body>
+
+</html>
