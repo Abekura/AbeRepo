@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript6回目</title>
+    <link rel="shortcut icon" href="../../_common/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+    <link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>値の取得</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+
+                <!-------------------------------------->
+                <h2>＜第6回目＞</h2>　
+                <h4>【やる事】</h4>
+                <h4>①値の取得</h4>
+                <h5>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ここに分かったをメモっていこう
+                </h5>
+
+                <h4>②querySelectorについて</h4>
+                <h5>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ここに分かったをメモっていこう
+                </h5>
+                <!-------------------------------------->
+                <hr>
+
+
+                <!-------------授業ではこの部分を触れるよ。------------>
+ 
+                <!-----------サンプル1-------------->
+                【サンプル①　テキストボックスの値を取得する】<br><br>
+                入力した内容をアラートで表示します。<br>
+                <input type="text" id="text00" value="aaaaa" size="10"><br>
+                <button onclick="otameshi()">alert出すよ</button>
+                <br><br>
+                <hr>
+                <!---------------------------------->
+
+                <!-----------サンプル2-------------->
+                【サンプル②　セレクトボックスの値を取得する】<br><br>
+                選んだ物を取得してアラート表示するよー<br>
+                <select id="selectBox00">
+                    <option value="国">国</option>
+                    <option value="祭">祭</option>
+                    <option value="理">理</option>
+                </select><br>
+                <button onclick="otameshi2()">alert出すよ</button>
+                <br><br>
+                <hr>
+                <!---------------------------------->
+
+                <!-----------サンプル3-------------->
+                【サンプル③　取得した値の判定】<br><br>
+                <input type="text" id="text01"><br>
+                <button onclick="otameshi3()" >OKが入力されてる時だけアラートを出すよ。</button>
+                <br><br>
+                <hr>           
+                <!---------------------------------->
+
+
+                <!-----------サンプル4-------------->
+                【サンプル④　getElementById以外を使ってDOMをつかむ。～querySelector編～】<br><br>
+                <div id="divId" style="border-style:solid;">
+                    idに「divId」が設定されたdivタグです。
+                </div><br>
+                <div class="divClass" style="border-style:solid;">
+                    idは設定されておらず、
+                    classに「divClass」が設定されたdivタグです。
+                </div><br>
+                <div name="divName" style="border-style:solid;">
+                    idもclassも設定されておらず、
+                    nameに「divName」が設定されたdivタグです。
+                </div><br>
+                <button onclick="otameshi4()">値を取得する。</button>
+                <br><br>
+                <hr>
+                <!---------------------------------->
+
+                <!-----------  ここから練習問題ブロック------------>
+                <h3>練習問題①</h3>
+                以下の3つからidが「pra1Text」の要素に入力した値をアラート表示しよう。<br>
+                <input type="text" value="入力欄Aだよー"><br>
+                <input type="text" id="pra1Text" value="入力欄Bだよー"><br>
+                <input type="text" value="入力欄Cよー"><br>
+                <button onclick="pra1()">ボタン</button>
+                <hr>
+
+                <h3>練習問題②</h3>
+                以下のセレクトボックスで「○」が選ばれた時だけ「OK」とアラートを表示しよう。<br>
+                <select id="selectBox01">
+                    <option value="○">○</option>
+                    <option value="×">×</option>
+                </select><br>
+                <button onclick="pra2()">ボタン</button>
+                <hr>
+
+
+                <h3>練習問題③</h3>
+                以下の3つの入力欄全てに「×」が入力された時だけ「OK」アラートを表示しよう。<br>
+                <input type="text" id="pra3Tag1" size="1">
+                <input type="text" id="pra3Tag2" size="1">
+                <input type="text" id="pra3Tag3" size="1"><br>
+                <button onclick="pra3()">ボタン</button>
+                <hr>
+
+                <h3>練習問題4</h3>
+                斜めに○が揃ったときのみ、「OK」とアラート表示siyou<br>
+                <input type="text" id="pra4Tag1" size="1">
+                <input type="text" id="pra4Tag2" size="1"><br>
+                <input type="text" id="pra4Tag3" size="1">
+                <input type="text" id="pra4Tag4" size="1"><br>
+                <button onclick="pra3()">ボタン</button>
+                <hr>
+                <!----------------------------------------------->
+
+            </section>
+        </div><!-- /.container -->
+    </main>
+    <script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="practice.js"></script>
+    <script src="hukusyu.js"></script>
+</body>
+
+</html>
