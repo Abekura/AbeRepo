@@ -28,12 +28,10 @@ function pra4(){
     var pra4Val2 = document.getElementById("pra4Tag2").value
     var pra4Val3 = document.getElementById("pra4Tag3").value
     var pra4Val4 = document.getElementById("pra4Tag4").value
-    if(pra4Val1 == "○" && pra4Val4 == "○" && pra4Val2 == "×" && pra4Val3 == "×"){
+    if((pra4Val1 == "○" && pra4Val4 == "○") || (pra4Val2 == "○" && pra4Val3 == "○")){
         alert("OK");
     } else {
-        if(pra4Val2 == "○" && pra4Val3 == "○" && pra4Val1 == "×" && pra4Val4 == "×") {
-            alert("OK");
-        }
+        
     }
-    
+
 };
