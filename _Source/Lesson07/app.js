@@ -1,25 +1,31 @@
 // 各種定義
-let flag = false; //ターンの切り替え
-let counter = 9; //マスの残機
-let winningLine = null; //勝ち線の変数定義
-const squares = document.querySelectorAll('.square'); //3×3のマス全て
-const squaresArray = [].slice.call(squares); // IE11対策
-const messages = document.querySelectorAll('.message-list li'); //htmlで定義されている<li>全て
-const messagesArray = [].slice.call(messages); // IE11対策
-const resetBtn = document.querySelector('#reset-btn'); //resetbuttonの変数定義
-
+//ターンの切り替え
+let flag = false; 
+//マス目の数
+let counter = 9; 
+//勝ち線の変数定義
+let winningLine = null; 
+//3×3のマス全て
+const squares = document.querySelectorAll('.square'); 
+// IE11対策
+const squaresArray = [].slice.call(squares); 
+//htmlで定義されている<li>全て
+const messages = document.querySelectorAll('.message-list li'); 
+// IE11対策
+const messagesArray = [].slice.call(messages); 
+//resetbuttonの変数定義
+const resetBtn = document.querySelector('#reset-btn'); 
 
 // メッセージの切り替え関数
 const setMessage = (id) => {
     messagesArray.forEach((message) => {
         if (message.id === id) {
-            message.classList.remove('js-hidden'); //(再戦)ボタンの生成
+            message.classList.remove('js-hidden');
         } else {
-            message.classList.add('js-hidden'); //(再戦)ボタンの非表示
+            message.classList.add('js-hidden');
         }
     });
 }
-
 
 // 勝利判定のパターン関数
 const filterById = (targetArray, idArray) => {
@@ -28,26 +34,29 @@ const filterById = (targetArray, idArray) => {
     });
 }
 // 勝利判定パターン
-const line1 = filterById(squaresArray, ['1-1', '1-2', '1-3']); //上一行
-const line2 = filterById(squaresArray, ['2-1', '2-2', '2-3']); //中一行
-const line3 = filterById(squaresArray, ['3-1', '3-2', '3-3']); //下一行
-const line4 = filterById(squaresArray, ['1-1', '2-1', '3-1']); //左一列
-const line5 = filterById(squaresArray, ['1-2', '2-2', '3-2']); //中一列
-const line6 = filterById(squaresArray, ['1-3', '2-3', '3-3']); //右一列
-const line7 = filterById(squaresArray, ['1-1', '2-2', '3-3']); //右下がりのライン
-const line8 = filterById(squaresArray, ['1-3', '2-2', '3-1']); //右上がりのライン
-const lineArray = [line1, line2, line3, line4, line5, line6, line7, line8]; //Arraylistとして格納
+const line1 = filterById(squaresArray, ['1-1', '1-2', '1-3']); 
+const line2 = filterById(squaresArray, ['2-1', '2-2', '2-3']); 
+const line3 = filterById(squaresArray, ['3-1', '3-2', '3-3']); 
+const line4 = filterById(squaresArray, ['1-1', '2-1', '3-1']); 
+const line5 = filterById(squaresArray, ['1-2', '2-2', '3-2']); 
+const line6 = filterById(squaresArray, ['1-3', '2-3', '3-3']); 
+const line7 = filterById(squaresArray, ['1-1', '2-2', '3-3']); 
+const line8 = filterById(squaresArray, ['1-3', '2-2', '3-1']); 
+//Arraylistとして格納
+const lineArray = [line1, line2, line3, line4, line5, line6, line7, line8]; 
 // 勝利判定関数
 const isWinner = (symbol) => {
     // some: 1つでも条件を満たしていればTrueを返す
     const result = lineArray.some((line) => {
         // every: 全て条件を満たしていればTrueを返す
         const subResult = line.every((square) => {
-            if (symbol === 'maru') { //○かどうかの判定
-                return square.classList.contains('js-maru-checked'); //square.classListに()の中身が含まれているか判定
+            if (symbol === 'maru') {
+                //square.classListに()の中身が含まれているか
+                return square.classList.contains('js-maru-checked'); 
             } else 
-            if (symbol === 'batsu') { //×かどうかの判定
-                return square.classList.contains('js-batsu-checked'); //square.classListに()の中身が含まれているか判定
+            if (symbol === 'batsu') {
+                //square.classListに()の中身が含まれているか
+                return square.classList.contains('js-batsu-checked'); 
             }
         });
 
@@ -57,7 +66,6 @@ const isWinner = (symbol) => {
     });
     return result;
 }
-
 
 // ゲーム終了時の関数
 const gameOver = () => {
@@ -77,7 +85,6 @@ const gameOver = () => {
     resetBtn.classList.remove('js-hidden');
 }
 
-
 // ゲームの初期化の関数
 const initGame = () => {
     flag = false;
@@ -90,23 +97,26 @@ const initGame = () => {
         square.classList.remove('js-highLight');
     });
     setMessage('batsu-turn');
-    resetBtn.classList.add('js-hidden'); //resetbuttonの非表示
+    //resetbuttonの非表示
+    resetBtn.classList.add('js-hidden'); 
 }
 // もう一回遊ぶをクリックすると初期化の関数呼び出し
 resetBtn.addEventListener('click', function() {
     initGame();
 });
 
-
 //　マスをクリックした時のイベント発生
 squaresArray.forEach((square) => {
     square.addEventListener('click', () => {
         if (flag === true) {
-            square.classList.add('js-maru-checked'); //クリックしたところの〇の表示・格納
-            square.classList.add('js-unclickable'); //クリック不可
+            //クリックしたところの〇の表示・格納
+            square.classList.add('js-maru-checked'); 
+            //クリック不可
+            square.classList.add('js-unclickable'); 
             //〇が勝っているかの判定
             if (isWinner('maru')) { 
-                setMessage('maru-win'); //〇の勝利宣言
+                //〇の勝利宣言
+                setMessage('maru-win'); 
                 gameOver();
                 return;
             }
@@ -115,11 +125,14 @@ squaresArray.forEach((square) => {
             flag = false;
 
         } else {
-            square.classList.add('js-batsu-checked'); //クリックしたところの×の表示・格納
-            square.classList.add('js-unclickable'); //クリック不可
+            //クリックしたところの×の表示・格納
+            square.classList.add('js-batsu-checked'); 
+            //クリック不可
+            square.classList.add('js-unclickable'); 
             //×が勝っているかの判定
             if (isWinner('batsu')) { 
-                setMessage('batsu-win'); //×の勝利宣言
+                //×の勝利宣言
+                setMessage('batsu-win'); 
                 gameOver();
                 return;
             }
@@ -130,8 +143,9 @@ squaresArray.forEach((square) => {
 
         counter--;
         // 引き分け判定
-        if (counter === 0) { //埋める場所がなくなったかどうかの判定
-            setMessage('draw'); //引き分け宣言
+        if (counter === 0) { 
+            //引き分け宣言
+            setMessage('draw'); 
             gameOver();
         }
     });
