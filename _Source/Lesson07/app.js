@@ -43,10 +43,10 @@ const isWinner = (symbol) => {
     const result = lineArray.some((line) => {
         // every: 全て条件を満たしていればTrueを返す
         const subResult = line.every((square) => {
-            if (symbol === 'maru') { //○のターンかどうかの判定
+            if (symbol === 'maru') { //○かどうかの判定
                 return square.classList.contains('js-maru-checked'); //square.classListに()の中身が含まれているか判定
             } else 
-            if (symbol === 'batsu') { //×のターンかどうかの判定
+            if (symbol === 'batsu') { //×かどうかの判定
                 return square.classList.contains('js-batsu-checked'); //square.classListに()の中身が含まれているか判定
             }
         });
